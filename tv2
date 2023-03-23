@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<head><title></title></head>
-<body>
+
 
 <style type="text/css">
 body {
@@ -693,5 +692,5 @@ jwplayer().on('play', function(e) {
 });
 </script><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c4d14a7f5d84c700f0bdbb67-|49" defer=""></script>
 
-</body>
+
 </html>
