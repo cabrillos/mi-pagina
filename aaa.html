@@ -46,11 +46,20 @@ if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
         ]
     }],
     width: "100%",
-    height: "100%",
-    autostart: true,
-    cast: {},
-    language: "es",
-  });
+	height: "100%",
+	aspectratio: "16:9",
+	autostart: true,
+	cast: {},
+	sharing: {}
+});
+
+if (getLang == "") {
+	getLang = 0;
+}
+
+jwplayer().on('play', function(e) {
+  jwplayer().setCurrentAudioTrack(getLang);
+});
   jwplayer_hls_provider.attach();
   p2pml.hlsjs.initJwPlayer(player, {
     liveSyncDurationCount: 7,
