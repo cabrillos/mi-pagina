@@ -1,0 +1,49 @@
+ <script type="text/javascript" src="" async data-cfasync="false"></script><html>
+   <head>
+      <meta name="robots" content="none">
+      <meta name="referrer" content="no-referrer">
+      <meta name="theme-color" content="black">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <title>HBO2</title>
+      <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+   </head>
+   <body bgcolor="black" style="margin:0; overflow:hidden">
+      <script type="text/javascript" src="" async data-cfasync="false"></script>      <script disable-devtool-auto src=""></script>      <script src="../js/keys.js"></script>
+      <script src="//ssl.p.jwpcdn.com/player/v/8.26.8/jwplayer.js"></script>
+      <script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
+      <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
+      <div id="player"></div>
+	<script>
+	if(Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
+		var engine = new p2pml.hlsjs.Engine();
+		var player = jwplayer("player");
+		player.setup({
+		playlist: [{
+			"sources": [{
+				"file": atob("Ly9lZGdlMS1jY2FzdC1zbC5jdmF0dHYuY29tLmFyL2xpdmUvYzZlZHMvSEJPXzIvU0FfTGl2ZV9kYXNoX2VuYy9IQk9fMi5tcGQ="),
+				"drm": {
+					"clearkey": {
+						"key": atob("MDRmNmM3Mzk4NGJkY2ZmZDAxMzA1MDYwODQ5NzkzNWQ="),
+						"keyId": atob("YzkwY2M1N2FkMmM0MzZlNWE3N2RiMmY4ZDlkYjJkODU=")
+					}
+				},
+			}]
+		}],
+		width: "100%",
+		height: "100%",
+		autostart: false,
+		cast: {}
+	});
+	jwplayer_hls_provider.attach();
+		p2pml.hlsjs.initJwPlayer(player, {
+			liveSyncDurationCount: 7,
+			loader: engine.createLoaderClass(),
+		});
+	} else {
+		document.write("Unsupported browser. Try Google Chrome");
+	}
+	</script>
+</html>
