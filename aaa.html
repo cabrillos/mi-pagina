@@ -17,7 +17,7 @@
       <script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
       <div id="player"></div>
 	<script>
-	if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
+if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
   var engine = new p2pml.hlsjs.Engine();
   var player = jwplayer("player");
   var audioTracks = player.getAudioTracks();
@@ -33,21 +33,31 @@
                     "keyId": atob("ZmFhZDE3MjJhNTc1ZjRkOWVjN2I3NzRkYjYzYzg3OWM=")
                 }
             },
-        }]
+        }],
+        "tracks": [
+          {
+            "file": "path/to/english/audio.mp3",
+            "label": "English"
+          },
+          {
+            "file": "path/to/spanish/audio.mp3",
+            "label": "Spanish"
+          }
+        ]
     }],
     width: "100%",
     height: "100%",
     autostart: true,
     cast: {},
     language: "es",
-});
+  });
   jwplayer_hls_provider.attach();
   p2pml.hlsjs.initJwPlayer(player, {
     liveSyncDurationCount: 7,
     loader: engine.createLoaderClass(),
   });
 } else {
-		document.write("Unsupported browser. Try Google Chrome");
-	}
-	</script>
+  document.write("Unsupported browser. Try Google Chrome");
+}
+</script>
 </html>
