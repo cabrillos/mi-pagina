@@ -20,6 +20,9 @@
 	if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
   var engine = new p2pml.hlsjs.Engine();
   var player = jwplayer("player");
+  var audioTracks = player.getAudioTracks();
+  var selectedTrackIndex = 2;
+  player.setCurrentAudioTrack(selectedTrackIndex);
   player.setup({
     playlist: [{
         "sources": [{
