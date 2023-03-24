@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Reproductor JWPlayer</title>
-    <script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+  <meta charset="UTF-8">
+  <title>Reproductor M3U8</title>
+  <script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
 </head>
 <body>
-    <div id="myElement"></div>
-    <script type="text/javascript">
-        var playerInstance = jwplayer("myElement");
-        playerInstance.setup({
-            file: "https://octubre-live.cdn.vustreams.com/live/channel09/live.isml/live.m3u8",
-            type: "hls",
-            width: "100%",
-        });
-    </script>
+  <div id="player"></div>
+  <script>
+    var player = jwplayer('player');
+    player.setup({
+      file: 'https://octubre-live.cdn.vustreams.com/live/channel09/live.isml/live.m3u8',
+      type: 'hls',
+      width: '100%',
+    });
+  </script>
 </body>
 </html>
