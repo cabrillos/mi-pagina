@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Psy TV player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ssl.p.jwpcdn.com/player/v/8.26.8/jwplayer.js"></script>
+</head>
+<body>
+    <div id="myplayer"></div>
+    <script>
+        const player = jwplayer('myplayer');
+        const channelsUrl = 'https://iptv-org.github.io/iptv/channels.json';
+        
+        // Realizar una solicitud GET a la URL de la API de canales
+        fetch(channelsUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Obtener el canal que deseas reproducir
+                const channel = data[0];
+                const videoUrl = channel.url;
+
+                // Actualizar la configuración del reproductor con la nueva URL
+                player.setup({
+                    file: videoUrl,
+                    width: '100%',
+                    height: '100%',
+                    autostart: true,
+                    mute: false,
+                    aspectratio: '16:9',
+                });
+            });
+    </script>
+</body>
+</html>
