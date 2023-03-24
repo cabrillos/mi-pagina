@@ -17,35 +17,18 @@ function getParameterByName(name) {
 }
 
 var id = getParameterByName('id');
-if (id == "#") {alert('Vuelve a la pagina anterior');}
+if (id == "#") {alert('Vuelve a la pÃƒÂ¡gina anterior');}
 var getLang = getParameterByName('lang');
 </script>
 <div id="player"></div>
 <script>
-if (id == 1057)
-{
-        keyId = "bb0ecaa6ae62336197c64d4129c6a09d";
-        key = "cb0bba4522ffcd90a8b51541a0fcfae0";
-}
-else if (id == 1240)
-{
-        keyId = "4d45b79d4487343589058ab49ddf8cf0";
-        key = "aa7f95f71a3cfe40aa59904f9285af72";
-}
-else if (id == 1032)
+if (id == 1032)
 {
 	keyId = "78a2c02489da5d5aa2c5254dc8357690";
 	key = "2d26cfbc205d6be3c810039868f41ae6";
 }
 
-if ( id == 1240 || id == 1057 )
-{
-	url = 'https://'+id+'-vos.dtvott.com/DASH';
-}
-
-else
-{
-	if (id == 1032)
+if (id == 1032)
 		letter = 'a';
 	
 		
@@ -70,10 +53,8 @@ playerInstance.setup({
 	}],
 	width: "100%",
 	height: "100%",
-	aspectratio: "16:9",
 	autostart: false,
 	cast: {},
-	sharing: {}
 });
 
 if (getLang == "") {
