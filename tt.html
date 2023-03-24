@@ -16,14 +16,14 @@
 	<script>
 		var getLang = getParameterByName('lang');
 		var playerInstance = jwplayer("player");
-
+url = 'hhttps://dtvott-abc.akamaized.net/dash_live_1032';
 playerInstance.setup({
 	playlist: [{
 		"sources": [
 			{
 				"default": true,
 				"type": "dash",
-				"file": url+'https://dtvott-abc.akamaized.net/dash_live_1032/manifest.mpd',
+				"file": url+'/manifest.mpd',
 				"drm": {
 					"clearkey": { "78a2c02489da5d5aa2c5254dc8357690": keyId, "2d26cfbc205d6be3c810039868f41ae6": key }
 				},
