@@ -17,7 +17,6 @@
       <script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
       <div id="player"></div>
 	<script>
-	if(Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
 		var engine = new p2pml.hlsjs.Engine();
 		var playerInstance = jwplayer("player");
 
@@ -37,10 +36,8 @@ playerInstance.setup({
 	}],
 	width: "100%",
 	height: "100%",
-	aspectratio: "16:9",
-	autostart: false,
+	autostart: true,
 	cast: {},
-	sharing: {}
 });
 
 if (getLang == "") {
