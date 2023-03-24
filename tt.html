@@ -10,14 +10,11 @@
    </head>
    <body bgcolor="black" style="margin:0; overflow:hidden">
       <script type="text/javascript" src="" async data-cfasync="false"></script>      <script disable-devtool-auto src=""></script>      <script src="../js/keys.js"></script>
-      <script src="//ssl.p.jwpcdn.com/player/v/8.26.8/jwplayer.js"></script>
+      <script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
       <script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
-      <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
       <div id="player"></div>
 	<script>
-		var engine = new p2pml.hlsjs.Engine();
+		var getLang = getParameterByName('lang');
 		var playerInstance = jwplayer("player");
 
 playerInstance.setup({
