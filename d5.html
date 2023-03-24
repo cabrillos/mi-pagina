@@ -1,35 +1,40 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Psy TV player</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ssl.p.jwpcdn.com/player/v/8.26.8/jwplayer.js"></script>
+    <script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";</script>
 </head>
 <body>
     <div id="myplayer"></div>
     <script>
-        const player = jwplayer('myplayer');
-        const channelsUrl = 'https://iptv-org.github.io/iptv/channels.json';
-        
-        // Realizar una solicitud GET a la URL de la API de canales
-        fetch(channelsUrl)
-            .then(response => response.json())
-            .then(data => {
-                // Obtener el canal que deseas reproducir
-                const channel = data[0];
-                const videoUrl = channel.url;
+        // Define un objeto de configuración para los diferentes videos disponibles
+        const videoUrls = {
+            1: 'https://octubre-live.cdn.vustreams.com/live/channel09/live.isml/live.m3u8',
+            2: 'https://live-01-01-tn.vodgc.net/TN24/index.m3u8'
+            3: 'https://iptv-org.github.io/iptv/index.nsfw.m3u'
+        };
 
-                // Actualizar la configuración del reproductor con la nueva URL
-                player.setup({
-                    file: videoUrl,
-                    width: '100%',
-                    height: '100%',
-                    autostart: true,
-                    mute: false,
-                    aspectratio: '16:9',
-                });
-            });
+        // Obtener el ID del video desde la URL de la página
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        // Obtener la URL del video correspondiente al ID de la página
+        const videoUrl = videoUrls[id] || '';
+
+        // Configurar el reproductor de video
+        const player = jwplayer('myplayer');
+        player.setup({
+            file: videoUrl,
+            width: '100%',
+            height: '100%',
+            autostart: true,
+            mute: false,
+            aspectratio: '16:9',
+            controls: true, // Agregar controles de reproductor
+            mobilecontrols: true // Agregar controles nativos para dispositivos móviles
+        });
     </script>
 </body>
 </html>
