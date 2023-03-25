@@ -1,49 +1,57 @@
- <script type="text/javascript" src="" async data-cfasync="false"></script><html>
-   <head>
-      <meta name="robots" content="none">
-      <meta name="referrer" content="no-referrer">
-      <meta name="theme-color" content="black">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      <meta content="width=device-width, initial-scale=1" name="viewport">
-      <title>HBO2</title>
-      <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-   </head>
-   <body bgcolor="black" style="margin:0; overflow:hidden">
-      <script type="text/javascript" src="" async data-cfasync="false"></script>      <script disable-devtool-auto src=""></script>      <script src="../js/keys.js"></script>
-      <script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-      <script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
-      <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script>
-      <script src="//cdn.jsdelivr.net/npm/hls.js@latest"></script>
-      <div id="player"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="robots" content="noindex">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
 	<script>
-	if(Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
-		var engine = new p2pml.hlsjs.Engine();
-		var player = jwplayer("player");
-		player.setup({
-		playlist: [{
-			"sources": [{
-				"file": atob("Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzExNDAvbWFuaWZlc3QubXBk"),
-				"drm": {
-					"clearkey": {
-						"key": atob("NmMyM2UzMWE0ZDgzYjU2OGU4NGFlYzYwOWE2M2ViYzk="),
-						"keyId": atob("OTllZWZjMDY4ZGIzNTA5YjlmMGNmNWIzNDExNDIxOWQ=")
-					}
-				},
-			}]
-		}],
-		width: "100%",
-		height: "100%",
-		autostart: true,
-		cast: {}
-	});
-	jwplayer_hls_provider.attach();
-		p2pml.hlsjs.initJwPlayer(player, {
-			liveSyncDurationCount: 7,
-			loader: engine.createLoaderClass(),
-		});
-	} else {
-		document.write("Unsupported browser. Try Google Chrome");
-	}
+		function getParameterByName(name) {
+			name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			results = regex.exec(location.search);
+			return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+
+		var getURL = getParameterByName('get');
+		var getKEY = getParameterByName('key');
+		var getKEY2 = getParameterByName('key2');
 	</script>
+
+	<script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+	<script>
+		jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+
+		var playerInstance = jwplayer("player");
+		playerInstance.setup({
+			playlist: [{
+				sources: [{
+					default: false,
+					type: "dash",
+					file: atob("Ly9kdHZvdHQtYWJjLmFrYW1haXplZC5uZXQvZGFzaF9saXZlXzExNDAvbWFuaWZlc3QubXBk"),
+					drm: {
+						clearkey: {
+							key: atob("NmMyM2UzMWE0ZDgzYjU2OGU4NGFlYzYwOWE2M2ViYzk="),
+							keyId: atob("OTllZWZjMDY4ZGIzNTA5YjlmMGNmNWIzNDExNDIxOWQ=")
+						}
+					},
+					label: "0"
+				}]
+			}],
+			width: "100%",
+			height: "100%",
+			aspectratio: "16:9",
+			autostart: true,
+			cast: {},
+			sharing: {}
+		});
+	</script>
+
+	<div id="player"></div>
+</body>
 </html>
