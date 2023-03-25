@@ -1,7 +1,5 @@
 <html lang="es">
 <head>
-<script type='text/javascript' src=''></script>  
-</head>  
 <meta name=robots content=noindex />
 <style>body{margin:0;padding:0}</style>
 <script>
@@ -11,16 +9,12 @@ function getParameterByName(name) {
   results = regex.exec(location.search);
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
-var getURL = 'aHR0cHM6Ly9kdHZvdHQtYWJjLmFrYW1haWplZC5uZXQvZGFzaF9saXZlXzExNDAvbWFuaWZlc3QubXBk';
-var getKEY  = 'Tm1NeU0yTXlOVGszTXpjM05EVTJNakV6T1dFMU1HRTBOek0wTnpNd1lUTTROVFpsTnpRMU5EY3lMakV5';
-var getKEY2 = 'SllVRlVDWkNNSk1EWXpNU1F4TVRZNU5ETTVNalF3TURjM01EQTNOalV5';
-
-var decodedURL = atob(getURL);
-var decodedKey = atob(getKEY);
-var decodedKey2 = atob(getKEY2);
+var getURL = "https://dtvott-abc.akamaized.net/dash_live_1140/manifest.mpd";
+var getKEY = "NmMyM2UzMWE0ZDgzYjU2OGU4NGFlYzYwOWE2M2ViYzk=";
+var getKEY2 = "OTllZWZjMDY4ZGIzNTA5YjlmMGNmNWIzNDExNDIxOWQ=";
 //if(window==window.top){window.location.replace("");}  
 </script>
-<script src="https://jwplayer.edgekey.net/players/XSuP4qMl-9tK17QNb-4-th2Pm9AWgMO_cYH8CI0HGGr7bdjo.js"></script>
+<script src="https://cdn.jwplayer.com/libraries/DbXZpFeJ.js"></script>
 <div id="player"></div>
 <script>
 var playerInstance = jwplayer("player");
@@ -31,9 +25,9 @@ var playerInstance = jwplayer("player");
                 {
                     "default": false,
                     "type": "dash",
-                    "file": decodedURL,
+                    "file": getURL,
                     "drm": {
-                        "clearkey": { "keyId": decodedKey, "key": decodedKey2 }
+                        "clearkey": { "keyId": getKEY, "key": getKEY2 }
                     },
                     "label": "0"
                 }
