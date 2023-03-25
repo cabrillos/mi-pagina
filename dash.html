@@ -1,5 +1,7 @@
 <html lang="es">
 <head>
+<script type='text/javascript' src=''></script>  
+</head>  
 <meta name=robots content=noindex />
 <style>body{margin:0;padding:0}</style>
 <script>
@@ -10,11 +12,14 @@ function getParameterByName(name) {
   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 var getURL = "https://dtvott-abc.akamaized.net/dash_live_1140/manifest.mpd";
-var getKEY = "NmMyM2UzMWE0ZDgzYjU2OGU4NGFlYzYwOWE2M2ViYzk=";
-var getKEY2 = "OTllZWZjMDY4ZGIzNTA5YjlmMGNmNWIzNDExNDIxOWQ=";
+var getIMG = getParameterByName('img');
+var getKEY  = "NmMyM2UzMWE0ZDgzYjU2OGU4NGFlYzYwOWE2M2ViYzk=";
+var getKEY2  = "OTllZWZjMDY4ZGIzNTA5YjlmMGNmNWIzNDExNDIxOWQ=";
 //if(window==window.top){window.location.replace("");}  
 </script>
-<script src="https://cdn.jwplayer.com/libraries/DbXZpFeJ.js"></script>
+<script src="//ssl.p.jwpcdn.com/player/v/8.26.8/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
 <div id="player"></div>
 <script>
 var playerInstance = jwplayer("player");
@@ -27,7 +32,7 @@ var playerInstance = jwplayer("player");
                     "type": "dash",
                     "file": getURL,
                     "drm": {
-                        "clearkey": { "keyId": getKEY, "key": getKEY2 }
+                        "clearkey": { "keyId": getKEY, "key": getKEY2}
                     },
                     "label": "0"
                 }
