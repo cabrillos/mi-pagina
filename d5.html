@@ -7,20 +7,21 @@
     <script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";</script>
 </head>
     <style>
-        body{
-    margin:0;
-    padding:0;
-    border:0;
-    overflow: hidden;
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      overflow: hidden;
     }
-        .jwplayer.jw-flag-aspect-mode {
-    height: 100%!important;
-}
-        #myplayer.jwplayer.jw-flag-aspect-mode {
-    height: 100% !important;
-}
 
-    </style>
+    .jwplayer.jw-flag-aspect-mode {
+      height: 100% !important;
+    }
+
+    #player.jwplayer.jw-flag-aspect-mode {
+      height: 100% !important;
+    }
+  </style>
 <body>
     <div id="myplayer"></div>
     <script>
@@ -64,7 +65,7 @@
         const videoUrl = videoUrls[id] || '';
 
         // Configurar el reproductor de video
-        const player = jwplayer('myplayer');
+        const player = jwplayer('player');
         player.setup({
             file: videoUrl,
             width: '100%',
